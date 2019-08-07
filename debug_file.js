@@ -10,7 +10,7 @@ const run = async function(){
 }
 
 const addRule = async ()=>{
-    const result = await runCommand({host,user,password},'/ip/firewall/nat/remove',['=action=masquarade'])
+    const result = await runCommand({host,user,password},'/ip/firewall/nat/add',['=chain=srcnat','=action=masquerade'])
     console.log(result)
 }
 
@@ -19,6 +19,6 @@ const listInterfaces = async () => {
     console.log(result)
 }
 
-//addRule()
+addRule()
 //run()
 //listInterfaces();
